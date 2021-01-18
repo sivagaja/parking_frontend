@@ -3,7 +3,7 @@ pipeline {
         stages{
             stage('Git Checkout'){
                 steps{
-                    git 'https://github.com/salgarsprabu/parking_frontend.git'
+                    git 'https://github.com/samridhi97/parking_frontend.git'
                 }
             }
             stage('Build') {
@@ -15,8 +15,8 @@ pipeline {
             }
             stage('Deploy'){
                 steps{
-                    sh 'cp -r $WORKSPACE/build /opt/apache-tomcat-9.0.31/webapps'
-                    sh 'curl -u admin:admin http://35.192.17.97:9081/manager/reload?path=/build'
+                    sh 'cp -r $WORKSPACE/build /var/jenkins_home/workspace'
+                    sh 'curl -u admin:admin http://35.192.17.97:8888/manager/reload?path=/build'
                 }
             }
             }
