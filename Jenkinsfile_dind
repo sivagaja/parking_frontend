@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "sivabharathi/parking_ui2"            
+    registry = "sivagaja/parking_ui2"            
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
